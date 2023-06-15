@@ -6,6 +6,7 @@ rg="rg --sort=path"
 $rg --version >/dev/null
 
 echo "Checking embedded file declarations:"
+# XXX not supported by apple's bash, requires homebrew bash; work around in github workflow for now
 # shellcheck disable=SC2016
 mapfile -t embeddedfiles < <($rg -I '^ +\$\(embedFileRelative "([^"]+)"' -or '$1')
 status=0
