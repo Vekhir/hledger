@@ -35,8 +35,7 @@ jobs:
     - name: Confirm all remaining steps should run
       run: echo "CONTINUE=true" >> $GITHUB_ENV
 
-    - if: contains( matrix.os, 'macos')
-      name: Install modern bash (required by checkembeddedfiles)
+    - name: Install modern bash (required by checkembeddedfiles)
       run: |
         brew install bash
         sudo mv /usr/local/bin/bash /bin/bash
