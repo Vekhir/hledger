@@ -35,12 +35,6 @@ jobs:
     - name: Confirm all remaining steps should run
       run: echo "CONTINUE=true" >> $GITHUB_ENV
 
-    - name: Install modern bash (required by checkembeddedfiles)
-      run: |
-        brew install bash
-        sudo mv /usr/local/bin/bash /bin/bash
-      # https://github.com/jitterbit/get-changed-files/issues/15
-
     - name: Check embedded files
       run: |
         brew install ripgrep
